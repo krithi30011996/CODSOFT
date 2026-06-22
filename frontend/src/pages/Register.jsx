@@ -1,0 +1,27 @@
+import { useState } from "react";
+import { register } from "../services/authService";
+
+function Register() {
+    const [form, setForm] = useState({ name: "", email: "", password: "" });
+    async function submit() {
+        try {
+            await register(form);
+            alert("Registered");
+        }
+        catch {
+            alert("Error");
+        }
+    }
+    return (
+        <div className="create-page">
+            <h1>Register</h1>
+            <input placeholder="Name" onChange={(e) => setForm({ ...form, name: e.target.value })} />
+            <input placeholder="Email" onChange={(e) => setForm({ ...form, email: e.target.value })} />
+            <input type="password" placeholder="Password" onChange={(e) => setForm({ ...form, password: e.target.value })} />
+            <button onClick={submit}>Register</button>
+        </div>
+    );
+
+}
+
+export default Register;

@@ -1,0 +1,135 @@
+import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+
+function Navbar() {
+
+    const [dark, setDark] =
+
+        useState(
+
+            localStorage.getItem(
+                "dark"
+            )
+
+            ===
+
+            "true"
+
+        );
+
+    useEffect(() => {
+
+        if (dark) {
+
+            document.body.classList.add(
+                "dark"
+            );
+
+        }
+
+        else {
+
+            document.body.classList.remove(
+                "dark"
+            );
+
+        }
+
+        localStorage.setItem(
+
+            "dark",
+
+            dark
+
+        );
+
+    }, [dark]);
+
+    return (
+
+        <nav className="navbar">
+
+            <h2>
+
+                QuizSphere
+
+            </h2>
+
+            <div className="links">
+
+                <Link to="/">
+
+                    Home
+
+                </Link>
+
+                <Link to="/quizzes">
+
+                    Explore
+
+                </Link>
+
+                <Link to="/create">
+
+                    Create
+
+                </Link>
+
+                <Link to="/leaderboard">
+
+                    🏆 Leaderboard
+
+                </Link>
+                <Link to="/favorites">
+
+                    ❤️ Favorites
+
+                </Link>
+
+                <Link to="/profile">
+
+                    👤 Profile
+
+                </Link>
+
+                <button
+
+                    className="theme"
+
+                    onClick={() =>
+
+                        setDark(
+
+                            !dark
+
+                        )
+
+                    }
+
+                >
+
+                    {
+
+                        dark
+
+                            ?
+
+                            "☀️"
+
+                            :
+
+                            "🌙"
+
+                    }
+
+                </button>
+
+            </div>
+
+        </nav>
+
+    );
+
+}
+
+export default Navbar;
