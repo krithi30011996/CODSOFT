@@ -13,9 +13,11 @@ function Register() {
                 password
             });
             alert("Registered Successfully");
+            navigate("/login");
         }
         catch {
             alert("Error");
+            console.log(error);
         }
     }
     return (
