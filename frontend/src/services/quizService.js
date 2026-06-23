@@ -5,7 +5,7 @@ const API =
     axios.create({
 
         baseURL:
-            "http://localhost:5000/api"
+            "https://codsoft-n2pt.onrender.com"
 
     });
 
