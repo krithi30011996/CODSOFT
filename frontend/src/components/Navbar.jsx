@@ -75,11 +75,11 @@ function Navbar() {
 
                 </Link>
 
-                <Link to="/leaderboard">
+               <Link to="/register">
+Register
+</Link>
 
-                    🏆 Leaderboard
-
-                </Link>
+                
                 <Link to="/favorites">
 
                     ❤️ Favorites

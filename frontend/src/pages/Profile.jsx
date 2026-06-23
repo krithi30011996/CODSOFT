@@ -1,183 +1,205 @@
 import "../styles/profile.css";
-import { useEffect,useState } from "react";
+import { useEffect, useState } from "react";
 
-function Profile(){
+function Profile() {
 
-const [user,setUser]=
-useState({});
+    const [user, setUser] =
+        useState({});
 
-const [favorites,setFavorites]=
-useState(0);
+    const [favorites, setFavorites] =
+        useState(0);
 
-const [played,setPlayed]=
-useState(0);
+    const [played, setPlayed] =
+        useState(0);
 
-const [badge,setBadge]=
-useState("🥉 Beginner");
+    const [badge, setBadge] =
+        useState("🥉 Beginner");
 
-useEffect(()=>{
+    useEffect(() => {
 
-loadProfile();
+        loadProfile();
 
-},[]);
+    }, []);
 
-function loadProfile(){
+    function loadProfile() {
 
-const currentUser=
+        const currentUser =
 
-JSON.parse(
+            JSON.parse(
 
-localStorage.getItem(
-"user"
-)
+                localStorage.getItem(
+                    "user"
+                )
 
-||
+                ||
 
-"{}"
+                "{}"
 
-);
+            );
 
-setUser(
-currentUser
-);
+        setUser(
+            currentUser
+        );
 
-setFavorites(
+        setFavorites(
 
-JSON.parse(
+            JSON.parse(
 
-localStorage.getItem(
-"favorites"
-)
+                localStorage.getItem(
+                    "favorites"
+                )
 
-||
+                ||
 
-"[]"
+                "[]"
 
-).length
+            ).length
 
-);
+        );
 
-setPlayed(
+        setPlayed(
 
-JSON.parse(
+            JSON.parse(
 
-localStorage.getItem(
-"scores"
-)
+                localStorage.getItem(
+                    "scores"
+                )
 
-||
+                ||
 
-"[]"
+                "[]"
 
-).length
+            ).length
 
-);
+        );
 
-setBadge(
+        setBadge(
 
-localStorage.getItem(
-"badge"
-)
+            localStorage.getItem(
+                "badge"
+            )
 
-||
+            ||
 
-"🥉 Beginner"
+            "🥉 Beginner"
 
-);
+        );
 
-}
+    }
 
-return(
+    return (
 
-<div className="profile">
+        <div className="profile">
 
-<div className="profile-header">
+            <div className="profile-header">
 
-<div className="profile-icon">
+                <div className="profile-icon">
 
-💎
+                    💎
 
-</div>
+                </div>
 
-<div>
+                <div>
 
-<h1>
 
-{user.name || "Guest"}
+                    <h1>
 
-</h1>
+                        {
 
-<p>
+                            user?.name
 
-{user.email || "Welcome back"}
+                                ?
 
-</p>
+                                `👋 ${user.name}`
 
-</div>
+                                :
 
-</div>
+                                "Guest"
 
-<div className="profile-grid">
+                        }
 
-<div className="mini-card">
+                    </h1>
 
-🏆
+                    <p>
 
-<h3>
+                        {
 
-{badge}
+                            user?.email
 
-</h3>
+                            ||
 
-<span>
+                            "Register and Login"
 
-Badge
+                        }
 
-</span>
+                    </p>
 
-</div>
 
-<div className="mini-card">
+                </div>
 
-❤️
+            </div>
 
-<h3>
+            <div className="profile-grid">
 
-{favorites}
+                <div className="mini-card">
 
-</h3>
+                    🏆
 
-<span>
+                    <h3>
 
-Favorites
+                        {badge}
 
-</span>
+                    </h3>
 
-</div>
+                    <span>
 
-<div className="mini-card">
+                        Badge
 
-📚
+                    </span>
 
-<h3>
+                </div>
 
-{played}
+                <div className="mini-card">
 
-</h3>
+                    ❤️
 
-<span>
+                    <h3>
 
-Played
+                        {favorites}
 
-</span>
+                    </h3>
 
-</div>
+                    <span>
 
-</div>
+                        Favorites
 
-</div>
+                    </span>
 
-);
+                </div>
+
+                <div className="mini-card">
+
+                    📚
+
+                    <h3>
+
+                        {played}
+
+                    </h3>
+
+                    <span>
+
+                        Played
+
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    );
 
 }
 
