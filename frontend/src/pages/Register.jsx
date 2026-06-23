@@ -17,7 +17,6 @@ function Register() {
         }
         catch {
             alert("Error");
-            console.log(error);
         }
     }
     return (
