@@ -5,7 +5,6 @@ export async function register(data) {
         "/auth/register",
         data
     );
-    return res.data;
 
 }
 
@@ -17,6 +16,5 @@ export async function login(
         "/auth/login",
         data
     );
-    return res.data;
 
 }
