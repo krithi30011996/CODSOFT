@@ -2,93 +2,129 @@ import { Link } from "react-router-dom";
 
 function Home() {
 
-    return (
+return (
 
-        <div className="home">
+<div className="home">
 
-            <div className="hero">
+<div className="hero">
 
-                <p className="hero-sub">
+<h1>
 
-                    Build • Share • Play
+Create Quizzes That People Love
 
-                </p>
+</h1>
 
-                <div className="hero-buttons">
+<p>
 
-                    <Link to="/create">
+Build interactive quizzes, share with friends, and track performance.
 
-                        <button>
+</p>
 
-                            Start Creating
+<div className="hero-buttons">
 
-                        </button>
+<Link to="/create">
 
-                    </Link>
+<button className="primary-btn">
 
-                    <Link to="/quizzes">
+Start Creating
 
-                        <button className="secondary">
+</button>
 
-                            Explore
+</Link>
 
-                        </button>
+<Link to="/quizzes">
 
-                    </Link>
+<button className="secondary-btn">
 
-                </div>
+Explore
 
-            </div>
+</button>
 
-            <div className="feature-grid">
+</Link>
 
-                <Link to="/create" className="feature-card">
+</div>
 
-                    <div>🧠</div>
+</div>
 
-                    <h2>Create</h2>
+<div className="feature-grid">
 
-                    <p>
+<Link
+to="/create"
+className="feature-card"
+>
 
-                        Build custom quizzes instantly
+<div className="card-icon">
 
-                    </p>
+🧠
 
-                </Link>
+</div>
 
-                <Link to="/quizzes" className="feature-card">
+<h2>
 
-                    <div>🌍</div>
+Create
 
-                    <h2>Explore</h2>
+</h2>
 
-                    <p>
+<p>
 
-                        Play quizzes from everyone
+Build custom quizzes instantly
 
-                    </p>
+</p>
 
-                </Link>
+</Link>
 
-                <div className="feature-card">
+<Link
+to="/quizzes"
+className="feature-card"
+>
 
-                    <div>🏆</div>
+<div className="card-icon">
 
-                    <h2>Compete</h2>
+🌍
 
-                    <p>
+</div>
 
-                        Track your scores
+<h2>
 
-                    </p>
+Explore
 
-                </div>
+</h2>
 
-            </div>
+<p>
 
-        </div>
+Play quizzes from everyone
 
-    );
+</p>
+
+</Link>
+
+<div className="feature-card">
+
+<div className="card-icon">
+
+🏆
+
+</div>
+
+<h2>
+
+Compete
+
+</h2>
+
+<p>
+
+Track your scores and progress
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+);
 
 }
 
