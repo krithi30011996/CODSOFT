@@ -16,8 +16,8 @@ import Profile from "./pages/Profile";
 
 function App() {
     return (
-        <BrowserRouter>
-            <Navbar />
+        <>
+    <Navbar />
             <Routes>
 
                 <Route path="/" element={<Home />} />
@@ -70,7 +70,7 @@ function App() {
 
 
             </Routes>
-        </BrowserRouter>
+            </>
     );
 }
 
