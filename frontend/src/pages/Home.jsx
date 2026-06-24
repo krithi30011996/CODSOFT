@@ -2,155 +2,93 @@ import { Link } from "react-router-dom";
 
 function Home() {
 
-const recent =
+    return (
 
-JSON.parse(
+        <div className="home">
 
-localStorage.getItem(
-"recentQuiz"
-)
+            <div className="hero">
 
-||
+                <p className="hero-sub">
 
-"null"
+                    Build • Share • Play
 
-);
+                </p>
 
-return (
+                <div className="hero-buttons">
 
-<div className="home">
+                    <Link to="/create">
 
-<div className="hero">
+                        <button>
 
-<h1>
+                            Start Creating
 
-QuizSphere
+                        </button>
 
-</h1>
+                    </Link>
 
-<p>
+                    <Link to="/quizzes">
 
-Create • Explore • Play • Learn
+                        <button className="secondary">
 
-</p>
+                            Explore
 
-</div>
+                        </button>
 
-<div className="home-grid">
+                    </Link>
 
-<Link
-to="/create"
-className="feature-card"
->
+                </div>
 
-✏️
+            </div>
 
-<h3>
+            <div className="feature-grid">
 
-Create Quiz
+                <Link to="/create" className="feature-card">
 
-</h3>
+                    <div>🧠</div>
 
-<p>
+                    <h2>Create</h2>
 
-Build your own quizzes
+                    <p>
 
-</p>
+                        Build custom quizzes instantly
 
-</Link>
+                    </p>
 
-<Link
-to="/quizzes"
-className="feature-card"
->
+                </Link>
 
-🔍
+                <Link to="/quizzes" className="feature-card">
 
-<h3>
+                    <div>🌍</div>
 
-Explore
+                    <h2>Explore</h2>
 
-</h3>
+                    <p>
 
-<p>
+                        Play quizzes from everyone
 
-Find quizzes
+                    </p>
 
-</p>
+                </Link>
 
-</Link>
+                <div className="feature-card">
 
-<Link
-to="/profile"
-className="feature-card"
->
+                    <div>🏆</div>
 
-👤
+                    <h2>Compete</h2>
 
-<h3>
+                    <p>
 
-Profile
+                        Track your scores
 
-</h3>
+                    </p>
 
-<p>
+                </div>
 
-View activity
+            </div>
 
-</p>
+        </div>
 
-</Link>
-
-<Link
-to="/login"
-className="feature-card"
->
-
-🔐
-
-<h3>
-
-Login
-
-</h3>
-
-<p>
-
-Access account
-
-</p>
-
-</Link>
-
-</div>
-
-{
-
-recent && (
-
-<div className="recent">
-
-<h2>
-
-Recent Quiz
-
-</h2>
-
-<p>
-
-{recent.title}
-
-</p>
-
-</div>
-
-)
-
-}
-
-</div>
-
-);
+    );
 
 }
 
