@@ -1,131 +1,31 @@
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function Home() {
 
-return (
+    const navigate =
+        useNavigate();
+   
 
-<div className="home">
 
-<div className="hero">
 
-<h1>
 
-Create Quizzes That People Love
+    const recent =
 
-</h1>
+        JSON.parse(
 
-<p>
+            localStorage.getItem(
+                "recentQuiz"
+            )
 
-Build interactive quizzes, share with friends, and track performance.
+            ||
 
-</p>
+            "null"
 
-<div className="hero-buttons">
+        );
 
-<Link to="/create">
 
-<button className="primary-btn">
 
-Start Creating
-
-</button>
-
-</Link>
-
-<Link to="/quizzes">
-
-<button className="secondary-btn">
-
-Explore
-
-</button>
-
-</Link>
-
-</div>
-
-</div>
-
-<div className="feature-grid">
-
-<Link
-to="/create"
-className="feature-card"
->
-
-<div className="card-icon">
-
-🧠
-
-</div>
-
-<h2>
-
-Create
-
-</h2>
-
-<p>
-
-Build custom quizzes instantly
-
-</p>
-
-</Link>
-
-<Link
-to="/quizzes"
-className="feature-card"
->
-
-<div className="card-icon">
-
-🌍
-
-</div>
-
-<h2>
-
-Explore
-
-</h2>
-
-<p>
-
-Play quizzes from everyone
-
-</p>
-
-</Link>
-
-<div className="feature-card">
-
-<div className="card-icon">
-
-🏆
-
-</div>
-
-<h2>
-
-Compete
-
-</h2>
-
-<p>
-
-Track your scores and progress
-
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-);
-
+  
 }
 
 export default Home;
