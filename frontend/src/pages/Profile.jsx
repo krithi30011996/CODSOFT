@@ -1,5 +1,6 @@
 import "../styles/profile.css";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function Profile() {
 
@@ -11,6 +12,8 @@ function Profile() {
 
     const [played, setPlayed] =
         useState(0);
+
+    const navigate = useNavigate();
 
     const [badge, setBadge] =
         useState("🥉 Beginner");
@@ -86,6 +89,15 @@ function Profile() {
         );
 
     }
+    function logout(){
+
+localStorage.removeItem("token");
+
+localStorage.removeItem("user");
+
+navigate("/login");
+
+}
 
     return (
 
@@ -196,6 +208,14 @@ function Profile() {
                 </div>
 
             </div>
+            <button
+className="logout-btn"
+onClick={logout}
+>
+
+Logout
+
+</button>
 
         </div>
 
