@@ -4,97 +4,94 @@ import { useNavigate } from "react-router-dom";
 
 function Register() {
 
-const navigate = useNavigate();
+    const navigate = useNavigate();
 
-const [form, setForm] = useState({
-name:"",
-email:"",
-password:""
-});
+    const [form, setForm] = useState({
+        name: "",
+        email: "",
+        password: ""
+    });
 
-async function submit(){
+    async function submit() {
 
-try{
+        try {
 
-await register(form);
+            console.log(form);
 
-alert("Registered Successfully");
+            await register(form);
 
-navigate("/login");
+            navigate("/login");
 
-}
+        }
 
-catch(error){
+        catch (error) {
 
-alert(
-error.response?.data?.message
-||
-"Register Failed"
-);
+            console.log(error);
 
-}
+        }
 
-}
+    }
 
-return(
 
-<div className="create-page">
+    return (
 
-<h1>
+        <div className="create-page">
 
-Register
+            <h1>
 
-</h1>
+                Register
 
-<input
-placeholder="Name"
-value={form.name}
-onChange={(e)=>
+            </h1>
 
-setForm({
-...form,
-name:e.target.value
-})
+            <input
+                placeholder="Name"
+                value={form.name}
+                onChange={(e) =>
 
-}
-/>
+                    setForm({
+                        ...form,
+                        name: e.target.value
+                    })
 
-<input
-placeholder="Email"
-value={form.email}
-onChange={(e)=>
+                }
+            />
 
-setForm({
-...form,
-email:e.target.value
-})
+            <input
+                placeholder="Email"
+                value={form.email}
+                onChange={(e) =>
 
-}
-/>
+                    setForm({
+                        ...form,
+                        email: e.target.value
+                    })
 
-<input
-type="password"
-placeholder="Password"
-value={form.password}
-onChange={(e)=>
+                }
+            />
 
-setForm({
-...form,
-password:e.target.value
-})
+            <input
+                type="password"
+                placeholder="Password"
+                value={form.password}
+                onChange={(e) =>
 
-}
-/>
+                    setForm({
+                        ...form,
+                        password: e.target.value
+                    })
 
-<button onClick={submit}>
+                }
+            />
 
-Register
+            <button onClick={submit}>
 
-</button>
+                Register
 
-</div>
+            </button>
 
-);
+        </div>
+
+    );
 
 }
 
