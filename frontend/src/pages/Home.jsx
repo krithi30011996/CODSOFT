@@ -44,21 +44,7 @@ function Home() {
 
 
         <div className="home">
-            <div className="top-bar">
-
-                <button
-
-                    className="logout-btn"
-
-                    onClick={logout}
-
-                >
-
-                    Logout
-
-                </button>
-
-            </div>
+            
 
             <section className="hero">
 
