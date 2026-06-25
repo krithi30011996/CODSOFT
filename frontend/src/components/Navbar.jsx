@@ -2,6 +2,19 @@ import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 function Navbar() {
+    const user =
+
+        JSON.parse(
+
+            localStorage.getItem(
+                "user"
+            )
+
+            ||
+
+            "null"
+
+        );
 
     const [dark, setDark] =
 
@@ -75,22 +88,35 @@ function Navbar() {
 
                 </Link>
 
-               <Link to="/register">
-Register
-</Link>
+                {
+                    !user && (
 
-                
+                        <Link to="/register">
+
+                            Register
+
+                        </Link>
+
+                    )
+                }
+
+
                 <Link to="/favorites">
 
                     ❤️ Favorites
 
                 </Link>
+                {
+                    user && (
 
-                <Link to="/profile">
+                        <Link to="/profile">
 
-                    👤 Profile
+                            👤 Profile
 
-                </Link>
+                        </Link>
+
+                    )
+                }
 
                 <button
 
