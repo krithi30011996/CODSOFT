@@ -2,19 +2,44 @@ import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 function Navbar() {
-    const user =
+    const [user,setUser]=
 
-        JSON.parse(
+useState(
 
-            localStorage.getItem(
-                "user"
-            )
+JSON.parse(
 
-            ||
+localStorage.getItem(
+"user"
+)
 
-            "null"
+||
 
-        );
+"null"
+
+)
+
+);
+
+useEffect(()=>{
+
+setUser(
+
+JSON.parse(
+
+localStorage.getItem(
+"user"
+)
+
+||
+
+"null"
+
+)
+
+);
+
+},[]);
+   
 
     const [dark, setDark] =
 
@@ -89,16 +114,36 @@ function Navbar() {
                 </Link>
 
                 {
-                    !user && (
 
-                        <Link to="/register">
+user
 
-                            Register
+?
 
-                        </Link>
+(
 
-                    )
-                }
+<Link to="/profile">
+
+👤 Profile
+
+</Link>
+
+)
+
+:
+
+(
+
+<Link to="/register">
+
+Register
+
+</Link>
+
+)
+
+}
+
+              
 
 
                 <Link to="/favorites">
@@ -106,17 +151,7 @@ function Navbar() {
                     ❤️ Favorites
 
                 </Link>
-                {
-                    user && (
-
-                        <Link to="/profile">
-
-                            👤 Profile
-
-                        </Link>
-
-                    )
-                }
+               
 
                 <button
 

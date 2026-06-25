@@ -11,6 +11,7 @@ function Login() {
             const res = await login({ email, password });
             localStorage.setItem("token", res.data.token);
             localStorage.setItem("user", JSON.stringify(res.data.user));
+            window.location.reload();
             alert("Login Success");
             navigate("/");
         }
