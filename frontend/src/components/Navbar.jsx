@@ -2,9 +2,7 @@ import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 function Navbar() {
-    const [user,setUser]=
-
-useState(
+    const user =
 
 JSON.parse(
 
@@ -16,29 +14,8 @@ localStorage.getItem(
 
 "null"
 
-)
-
 );
-
-useEffect(()=>{
-
-setUser(
-
-JSON.parse(
-
-localStorage.getItem(
-"user"
-)
-
-||
-
-"null"
-
-)
-
-);
-
-},[]);
+   
    
 
     const [dark, setDark] =
