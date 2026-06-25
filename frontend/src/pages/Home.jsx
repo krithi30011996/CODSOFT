@@ -4,21 +4,7 @@ function Home() {
 
     const navigate =
         useNavigate();
-    function logout() {
-
-        localStorage.removeItem(
-            "token"
-        );
-
-        localStorage.removeItem(
-            "user"
-        );
-
-        navigate(
-            "/login"
-        );
-
-    }
+   
 
 
 
