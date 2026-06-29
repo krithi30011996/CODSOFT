@@ -44,37 +44,41 @@ function Profile() {
             currentUser
         );
 
-        setFavorites(
+       setFavorites(
 
-            JSON.parse(
+JSON.parse(
 
-                localStorage.getItem(
-                    "favorites"
-                )
+localStorage.getItem(
 
-                ||
+`favorites_${currentUser?.email}`
 
-                "[]"
+)
 
-            ).length
+||
 
-        );
+"[]"
 
-        setPlayed(
+).length
 
-            JSON.parse(
+);
 
-                localStorage.getItem(
-                    "scores"
-                )
+       setPlayed(
 
-                ||
+JSON.parse(
 
-                "[]"
+localStorage.getItem(
 
-            ).length
+`scores_${currentUser?.email}`
 
-        );
+)
+
+||
+
+"[]"
+
+).length
+
+);
 
         setBadge(
 

@@ -18,9 +18,7 @@ app.use(
 
         origin: [
 
-            "http://localhost:5173",
-
-            "https://codsoft-sandy-five.vercel.app"
+            "http://localhost:5173"
 
         ],
 

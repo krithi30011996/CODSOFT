@@ -12,28 +12,40 @@ function Favorites() {
 
         loadFavorites();
         window.addEventListener("storage", loadFavorites);
-        return()=>{
+        return () => {
             window.removeEventListener("storage", loadFavorites);
         }
 
     }, []);
 
-async function loadFavorites(){
+    async function loadFavorites() {
 
-try{
+        try {
 
-const res=
+            const res =
 
-await API.get(
-"/quiz"
-);
+                await API.get(
+                    "/quiz"
+                );
 
-const favorites=
+           const user =
 
 JSON.parse(
 
 localStorage.getItem(
-"favorites"
+"user"
+)
+
+);
+
+const favorites =
+
+JSON.parse(
+
+localStorage.getItem(
+
+`favorites_${user?.email}`
+
 )
 
 ||
@@ -42,41 +54,41 @@ localStorage.getItem(
 
 );
 
-const unique=
+            const unique =
 
-[
+                [
 
-...new Set(
-favorites
-)
+                    ...new Set(
+                        favorites
+                    )
 
-];
+                ];
 
-setQuizzes(
+            setQuizzes(
 
-res.data.filter(
+                res.data.filter(
 
-quiz=>
+                    quiz =>
 
-unique.includes(
-quiz._id
-)
+                        unique.includes(
+                            quiz._id
+                        )
 
-)
+                )
 
-);
+            );
 
-}
+        }
 
-catch(error){
+        catch (error) {
 
-console.log(
-error
-);
+            console.log(
+                error
+            );
 
-}
+        }
 
-}
+    }
 
     return (
 
