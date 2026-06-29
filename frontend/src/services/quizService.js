@@ -1,12 +1,10 @@
 import axios from "axios";
 
-const API =
+const API = axios.create({
 
-    axios.create({
+baseURL:
+"http://localhost:5000/api"
 
-        baseURL:
-            "https://codsoft-n2pt.onrender.com/api"
-
-    });
+});
 
 export default API;
